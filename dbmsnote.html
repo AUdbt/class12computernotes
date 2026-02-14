@@ -518,7 +518,7 @@ Here, <code>StudentID</code>, <code>Email</code>, and <code>Phone</code> are all
 			SQL FUNCTIONS IN USE
 		</summary>
 		<code>
-			SELECT o.order_id, o.customer_id, o.amount,c.customer_name , <br>
+			SELECT o.order_id, o.customer_id, SUM(o.amount) AS amount,c.customer_name , <br>
 					LENGTH(c.customer_name) AS name_length,<br>
 					UPPER(c.customer_name) AS name_upr,<br>
 					LOWER(c.customer_name) AS name_lwr,<br>
@@ -537,6 +537,7 @@ Here, <code>StudentID</code>, <code>Email</code>, and <code>Phone</code> are all
    <hr>
   </body>
  </html>
+
 
 
 
