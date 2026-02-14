@@ -513,6 +513,28 @@ Here, <code>StudentID</code>, <code>Email</code>, and <code>Phone</code> are all
    </details>
    
    <hr>
-   
+	<details>
+		<summary>
+			SQL FUNCTIONS IN USE
+		</summary>
+		<code>
+			SELECT o.order_id, o.customer_id, o.amount,c.customer_name , 
+					LENGTH(c.customer_name) AS name_length,
+					UPPER(c.customer_name) AS name_upr,
+					LOWER(c.customer_name) AS name_lwr,
+					CONCAT(c.customer_name, " " ,c.customer_name) AS name_conct,
+					REPEAT(c.customer_name, 3 ) AS name_rept,
+					LEFT(c.customer_name,2) AS name_lft,
+					RIGHT(c.customer_name,2) AS name_rig,
+					REVERSE(c.customer_name) AS name_rev
+					FROM orders AS o
+					JOIN customers AS c
+					on o.customer_id = c.customer_id
+					GROUP BY customer_id
+		</code>
+		<img src="sql_fnct_op.jpg" >
+	</details>
+   <hr>
   </body>
  </html>
+
